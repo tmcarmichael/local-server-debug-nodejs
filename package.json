@@ -1,0 +1,30 @@
+{
+  "name": "rest-local-server-node",
+  "description": "A lightweight, NodeJS, Express REST server",
+  "author": "Thomas Carmichael",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "src/main.mjs",
+  "type": "module",
+  "engines": {
+    "node": ">=19.6.0"
+  },
+  "scripts": {
+    "start": "node ./src/main.mjs",
+    "watch": "node --watch ./src/main.mjs"
+  },
+  "keywords": [
+    "REST",
+    "Express",
+    "JavaScript",
+    "NodeJS"
+  ],
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "winston": "^3.8.2"
+  }
+}
