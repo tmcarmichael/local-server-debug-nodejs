@@ -17,7 +17,7 @@ Intended as a debug tool for REST and eventually GraphQL / gRPC / tRPC protocol.
 
 ## Quick Start
 
-### NPM Quick Start
+### <span style="color:blue">NPM Quick Start</span>
 
 1. CD into project root.
 2. Ensure you have the latest Node version v19 or higher.
