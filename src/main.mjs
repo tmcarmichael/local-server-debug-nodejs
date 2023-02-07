@@ -1,6 +1,4 @@
 import { expressRestApi } from "./server/server.mjs";
 
-// Entrypoint
-(() => {
-  expressRestApi();
-})();
+// REST API entrypoint
+expressRestApi();
