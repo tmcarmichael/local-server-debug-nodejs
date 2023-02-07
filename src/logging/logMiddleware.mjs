@@ -15,13 +15,14 @@ import chalk from "chalk";
 export const logMiddleware = morgan(function (tokens, req, res) {
   return [
     chalk.hex("#2ed573").bold("HTTP:"),
-    tokens.method(req, res),
-    chalk.hex("#2ed573").bold(tokens.status(req, res)),
-    chalk.hex("#2ed573").bold(tokens.url(req, res)),
+    chalk.hex("#FF6F61").bold(tokens.method(req, res)),
+    chalk.hex("#EFC050").bold(tokens.status(req, res)),
+    chalk
+      .hex("#92A8D1")
+      .bold(
+        `http://${process.env.HOST}:${process.env.PORT}` + tokens.url(req, res)
+      ),
     chalk.hex("#2ed573").bold(tokens["response-time"](req, res) + " ms"),
-    chalk.hex("#2ed573").bold("@ " + tokens.date(req, res)),
-    chalk.yellow(tokens["remote-addr"](req, res)),
-    chalk.hex("#2ed573").bold("from: " + tokens.referrer(req, res)),
-    chalk.hex("#2ed573")(tokens["user-agent"](req, res)),
+    chalk.hex("#2ed573").bold("@ " + tokens.date(req, res))
   ].join(" ");
 });

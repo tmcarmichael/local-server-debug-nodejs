@@ -43,8 +43,11 @@ export const expressRestApi = () => {
   // CRUD default examples:
   // GET /
   app.get("/", (req, res) => {
-    loggerNoTimestamp.info("  Server ACK root route.");
-    res.status(200).send("hello");
+    res
+      .status(200)
+      .send(
+        "Root route, try: GET /items, GET /items/:id, POST /items, PUT /items/:id, or DELETE /items/:id"
+      );
   });
 
   // GET /items
