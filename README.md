@@ -2,7 +2,7 @@
 
 ![Design](./assets/design-ref.png)
 
-Intented as a debug tool for REST and eventually GraphQL / gRPC / tRPC protocol. As needed, change the output of REST rest services by routing to this local server and setting the response. This allows end to end and integrated testing with frontend changes without being blocked by pending dependency API updates. While mocking and intercepting are options they become increasingly more time consuming in many-layered frontend apps/frameworks. Instead, You can just spin up the local REST server in minutes. The server implementation is kept flat and free from abstraction to make changes easy. Just open {{root}}/src/server/server.mjs and update Express REST endpoints as needed. Default CRUD operations are given. Postman collections are also added so feel free to use those to verify setup.
+Intended as a debug tool for REST and eventually GraphQL / gRPC / tRPC protocol. As needed, change the output of REST services by routing to this local server and setting the response. This allows end-to-end and integrated testing with frontend changes without being blocked by pending dependency API updates. While mocking and intercepting are options, they become increasingly more time consuming in many-layered frontend apps/frameworks that have rendering subscriptions, hooks, and other dynamic functionality. Instead, You can just spin up the local REST server in minutes. The server implementation is kept flat and free from unnecessary abstraction to make modifications easy. Just open {{root}}/src/server/server.mjs and update Express REST endpoints as needed. Default CRUD operations are given. Postman collections are also added so feel free to use those to verify setup.
 
 ## NPM - Quick Start:
 
@@ -28,4 +28,8 @@ Intented as a debug tool for REST and eventually GraphQL / gRPC / tRPC protocol.
 
 ## Instructions:
 
-After following quick start, consider what endpoints you'd like to build with. For example, suppose an API is needed to finish a frontend task, and in order to see the changes render a user object is required. You can go to the DB and set it so it's available and simply start the server and make your GET request to https://localhost:{PORT}/item to retrieve the item. Detailed logs are available in your console, and each session will stream logs to an `out.log` file in the repo root.
+After following quick start, consider what endpoints you'd like to build with. For example, suppose an API is needed to finish a frontend task, and in order to render some higher-order-component, a user fetch object is required. You can go to the DB and set the needed objects (or POST them in from Postman). Simply start the server and reroute your requests to the local REST server. Detailed logs are available in your console, and each session will stream logs to an `out.log` file in the repo root.
+
+## Next steps:
+
+Adding functionality for this repo to act as a stand-in server for other communication protocols: GraphQL, tRPC, gRPC. And consider ways to improve the ease of use and utility for REST.
