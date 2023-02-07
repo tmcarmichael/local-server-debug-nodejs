@@ -1,11 +1,8 @@
-# NodeJS local server debug tool
+# NodeJS local server debug tool [In Progress]
 
-(( In progress ))
+![Design](./assets/design-ref.png)
 
-Intented as a debug tool for REST and eventually GraphQL / gRPC / tRPC protocol.
-Mock a server by redirecting it to this local server.
-
-Use Node verison > 19 for node --watch flag. This allows recompiling with saved changes without use of nodemon.
+Intented as a debug tool for REST and eventually GraphQL / gRPC / tRPC protocol. As needed, change the output of REST rest services by routing to this local server and setting the response. This allows end to end and integrated testing with frontend changes without being blocked by pending dependency API updates. While mocking and intercepting are options they become increasingly more time consuming in many-layered frontend apps/frameworks. Instead, You can just spin up the local REST server in minutes. The server implementation is kept flat and free from abstraction to make changes easy. Just open {{root}}/src/server/server.mjs and update Express REST endpoints as needed. Default CRUD operations are given. Postman collections are also added so feel free to use those to verify setup.
 
 ## NPM - Quick Start:
 
@@ -29,6 +26,6 @@ Use Node verison > 19 for node --watch flag. This allows recompiling with saved 
 6. Modify the server (`./src/server/server.mjs`) and mock the req/res to match your live server.
 7. (Optional) You can use `yarn run watch` to automatically restart the server after making saved changes.
 
-## Why not nodemon?
+## Instructions:
 
-NodeJS version >19 contains a --watch flag that makes importing nodemon uncessessary. More: https://www.makeuseof.com/node-19-watch-mode-features/
+After following quick start, consider what endpoints you'd like to build with. For example, suppose an API is needed to finish a frontend task, and in order to see the changes render a user object is required. You can go to the DB and set it so it's available and simply start the server and make your GET request to https://localhost:{PORT}/item to retrieve the item. Detailed logs are available in your console, and each session will stream logs to an `out.log` file in the repo root.
